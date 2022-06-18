@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/userStatusFragment">
+
+
+    <fragment
+        android:id="@+id/userStatusFragment"
+        android:name="com.atahar.cvdprediction.view.UserStatusFragment"
+        android:label="UserStatusFragment">
+        <action
+            android:id="@+id/action_userStatusFragment_to_userInputFragment"
+            app:destination="@id/userInputFragment"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+
+        <argument
+            android:name="cvd_status"
+            android:defaultValue="-1"
+            app:argType="integer" />
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/userInputFragment"
+        android:name="com.atahar.cvdprediction.view.UserInputFragment"
+        android:label="UserInputFragment"
+        tools:layout="@layout/fragment_user_input">
+        <action
+            android:id="@+id/action_userInputFragment_to_userStatusFragment"
+            app:destination="@id/userStatusFragment"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true" />
+
+        <argument
+            android:name="sample_input"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+
+
+
+    </fragment>
+
+
+</navigation>

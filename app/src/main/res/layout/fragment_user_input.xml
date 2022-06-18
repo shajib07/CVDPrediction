@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.atahar.cvdprediction.UserInputViewModel" />
+
+        <import type="com.atahar.cvdprediction.model.CVDInputType" />
+    </data>
+
+
+    <ScrollView
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            tools:context="com.atahar.flickrimage.presentation.SearchFragment">
+
+            <com.atahar.cvdprediction.UserInputItem
+                android:id="@+id/age_input_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputLabel="@{CVDInputType.AGE.label}"
+                app:inputSelectionListener="@{(pos) -> viewModel.onItemSelected(pos, CVDInputType.AGE)}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:selectedItem="@{viewModel.ageSelectedItem}"
+                app:spinnerItems="@{viewModel.ageList}" />
+
+            <com.atahar.cvdprediction.UserInputItem
+                android:id="@+id/sex_input_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputLabel="@{CVDInputType.SEX.label}"
+                app:inputSelectionListener="@{(pos) -> viewModel.onItemSelected(pos, CVDInputType.SEX)}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/age_input_item"
+                app:selectedItem="@{viewModel.sexSelectedItem}"
+                app:spinnerItems="@{viewModel.sexList}" />
+
+            <com.atahar.cvdprediction.UserInputItem
+                android:id="@+id/cp_input_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputLabel="@{CVDInputType.CP.label}"
+                app:inputSelectionListener="@{(pos) -> viewModel.onItemSelected(pos, CVDInputType.CP)}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sex_input_item"
+                app:selectedItem="@{viewModel.cpSelectedItem}"
+                app:spinnerItems="@{viewModel.cpList}" />
+
+            <com.atahar.cvdprediction.UserInputItem
+                android:id="@+id/rest_input_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputLabel="@{CVDInputType.REST_BP.label}"
+                app:inputSelectionListener="@{(pos) -> viewModel.onItemSelected(pos, CVDInputType.REST_BP)}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cp_input_item"
+                app:selectedItem="@{viewModel.restBPSelectedItem}"
+                app:spinnerItems="@{viewModel.restBPList}" />
+
+            <com.atahar.cvdprediction.UserInputItem
+                android:id="@+id/chol_input_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputLabel="@{CVDInputType.CHOLESTEROL.label}"
+                app:inputSelectionListener="@{(pos) -> viewModel.onItemSelected(pos, CVDInputType.CHOLESTEROL)}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rest_input_item"
+                app:selectedItem="@{viewModel.cholSelectedItem}"
+                app:spinnerItems="@{viewModel.cholList}" />
+
+            <com.atahar.cvdprediction.UserInputItem
+                android:id="@+id/fbs_input_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputLabel="@{CVDInputType.FBS.label}"
+                app:inputSelectionListener="@{(pos) -> viewModel.onItemSelected(pos, CVDInputType.FBS)}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chol_input_item"
+                app:selectedItem="@{viewModel.fbsSelectedItem}"
+                app:spinnerItems="@{viewModel.fbsList}" />
+
+            <com.atahar.cvdprediction.UserInputItem
+                android:id="@+id/ecg_input_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputLabel="@{CVDInputType.ECG.label}"
+                app:inputSelectionListener="@{(pos) -> viewModel.onItemSelected(pos, CVDInputType.ECG)}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fbs_input_item"
+                app:selectedItem="@{viewModel.ecgSelectedItem}"
+                app:spinnerItems="@{viewModel.ecgList}" />
+
+            <com.atahar.cvdprediction.UserInputItem
+                android:id="@+id/thalach_input_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputLabel="@{CVDInputType.THALACH.label}"
+                app:inputSelectionListener="@{(pos) -> viewModel.onItemSelected(pos, CVDInputType.THALACH)}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ecg_input_item"
+                app:selectedItem="@{viewModel.thalachSelectedItem}"
+                app:spinnerItems="@{viewModel.thalachList}" />
+
+            <com.atahar.cvdprediction.UserInputItem
+                android:id="@+id/exang_input_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputLabel="@{CVDInputType.EXANG.label}"
+                app:inputSelectionListener="@{(pos) -> viewModel.onItemSelected(pos, CVDInputType.EXANG)}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/thalach_input_item"
+                app:selectedItem="@{viewModel.exangSelectedItem}"
+                app:spinnerItems="@{viewModel.exangList}" />
+
+            <com.atahar.cvdprediction.UserInputItem
+                android:id="@+id/oldpeak_input_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputLabel="@{CVDInputType.OLDPEAK.label}"
+                app:inputSelectionListener="@{(pos) -> viewModel.onItemSelected(pos, CVDInputType.OLDPEAK)}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/exang_input_item"
+                app:selectedItem="@{viewModel.oldpeakSelectedItem}"
+                app:spinnerItems="@{viewModel.oldpeakList}" />
+
+            <com.atahar.cvdprediction.UserInputItem
+                android:id="@+id/slope_input_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputLabel="@{CVDInputType.SLOPE.label}"
+                app:inputSelectionListener="@{(pos) -> viewModel.onItemSelected(pos, CVDInputType.SLOPE)}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/oldpeak_input_item"
+                app:selectedItem="@{viewModel.slopeSelectedItem}"
+                app:spinnerItems="@{viewModel.slopeList}" />
+
+            <com.atahar.cvdprediction.UserInputItem
+                android:id="@+id/ca_input_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputLabel="@{CVDInputType.CA.label}"
+                app:inputSelectionListener="@{(pos) -> viewModel.onItemSelected(pos, CVDInputType.CA)}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/slope_input_item"
+                app:selectedItem="@{viewModel.caSelectedItem}"
+                app:spinnerItems="@{viewModel.caList}" />
+
+            <com.atahar.cvdprediction.UserInputItem
+                android:id="@+id/thal_input_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputLabel="@{CVDInputType.THAL.label}"
+                app:inputSelectionListener="@{(pos) -> viewModel.onItemSelected(pos, CVDInputType.THAL)}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ca_input_item"
+                app:selectedItem="@{viewModel.thalSelectedItem}"
+                app:spinnerItems="@{viewModel.thalList}" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submitBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_bg"
+                android:text="@string/submit"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/thal_input_item" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+</layout>

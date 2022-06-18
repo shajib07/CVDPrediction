@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CVD Prediction</string>
+    <string name="welcome_text">Welcome to Cardio Vascular Disease prediction!</string>
+    <string name="cvd_risk_text">You have risk of Heart disease.\nPlease contact to a Doctor.</string>
+    <string name="cvd_no_risk_text">You do not have risk of Heart disease.</string>
+    <string name="submit">Submit</string>
+    <string name="select_all_values">Please select all values.</string>
+</resources>
